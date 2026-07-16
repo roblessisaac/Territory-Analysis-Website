@@ -197,10 +197,13 @@
             <section id="sect-importer" class="hidden py-4">
                 <div class="max-w-4xl mx-auto flex flex-col gap-6">
                     <div class="border-b border-slate-200 pb-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-green-700">Formatting Instructions</span>
-                        <h2 class="tech-header text-3xl font-bold text-slate-900 mt-1">Northwest System Address Importer</h2>
+                        <span class="text-xs font-bold uppercase tracking-widest text-green-700">Instructions</span>
+                        <h2 class="tech-header text-3xl font-bold text-slate-900 mt-1">New World Scheduler (NWS) Address Importer</h2>
                         <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-                            Once your territory addresses are accurate, they need to be formatted correctly to import smoothly into your territory management system. This tool strips extra spaces, parses multi-family units, and prepares your file for NWS.
+                            Once you have generated your territory analysis spreadsheet, you can easily reformat that data to import smoothly into NW Scheduler. This landing tool takes the raw address dataset from your analysis and restructures it into a format NWS software can read! 
+                        </p>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Follow the simple steps below to format your files. To ensure rapid processing without data limits, the conversion tool opens in a separate, dedicated window.
                         </p>
                     </div>
 
@@ -208,24 +211,25 @@
                         <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
                             <span class="data-font text-green-700 text-sm font-bold uppercase">Step 01</span>
                             <h3 class="tech-header font-bold text-slate-900">Export from NWS</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">Download your current "Territory" Export file directly from your NWS administrative dashboard.</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Download your current "Territory" Export file directly from your NWS desktop app. This file should be a CSV.</p>
                         </div>
                         <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
                             <span class="data-font text-green-700 text-sm font-bold uppercase">Step 02</span>
                             <h3 class="tech-header font-bold text-slate-900">Upload your Data</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">Launch the engine and upload both your Territory Analysis CSV and your NWS Territory Export file.</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Save your territory analysis spreadsheet as a CSV file. Upload both your Territory Analysis CSV and your NWS Territory Export CSV.</p>
                         </div>
                         <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
                             <span class="data-font text-green-700 text-sm font-bold uppercase">Step 03</span>
                             <h3 class="tech-header font-bold text-slate-900">Download Formatted List</h3>
-                            <p class="text-xs text-slate-600 leading-relaxed">Download the resulting NWS "Address" Import file, fully sanitized and ready to be uploaded back into NWS.</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">Download the resulting NWS "Address" Import file, fully ready to be uploaded into NWS. See <a href="#" onclick="navigateTo('faq'); return false;" class="text-green-700 font-semibold hover:underline">FAQ</a> for further direction if needed.</p>
                         </div>
                     </div>
 
-                    <div class="mt-8 flex justify-center">
-                        <button onclick="window.open('https://your-streamlit-app-url.com', '_blank')" class="tactile-btn px-10 py-4 bg-green-700 hover:bg-green-600 text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition duration-150 text-sm flex items-center gap-2">
+                    <div class="mt-8 flex flex-col items-center gap-4">
+                        <button onclick="window.open('https://mke-nws-import.streamlit.app/', '_blank')" class="tactile-btn px-10 py-4 bg-green-700 hover:bg-green-600 text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition duration-150 text-sm flex items-center gap-2">
                             Launch Importer Engine →
                         </button>
+                        <a href="#" onclick="navigateTo('faq'); return false;" class="text-sm text-green-700 hover:underline font-medium">Stuck? See the FAQ’S</a>
                     </div>
                 </div>
             </section>
