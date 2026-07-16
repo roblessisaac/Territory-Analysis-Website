@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #fcfaf8;
+            background-color: #efefef;
             color: #0f172a;
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             background-image: 
@@ -29,7 +29,7 @@
             font-family: 'Fira Code', monospace;
         }
         .cyber-panel {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(243, 245, 243, 0.8);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(203, 213, 225, 0.8);
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -51,7 +51,7 @@
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #fcfaf8;
+            background: #efefef;
         }
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
@@ -71,14 +71,14 @@
         <header class="mb-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 py-2">
                 <h1 class="tech-header text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 select-none leading-none">
-                    //TERRITORY<span class="text-green-900">_</span>ANALYSIS
+                    TERRITORY<span class="text-green-900">_</span>ANALYSIS
                 </h1>
                 
                 <!-- GAME MODE NAVIGATION TABS -->
                 <nav class="flex flex-wrap justify-center bg-white/90 border border-slate-200 shadow-sm p-1.5 rounded-xl text-[11px] tracking-wider uppercase font-semibold text-slate-500">
                     <button onclick="navigateTo('home')" id="tab-home" class="px-4 py-2 rounded-lg hover:text-slate-900 transition duration-150 bg-green-800 text-white">Home</button>
                     <button onclick="navigateTo('analysis')" id="tab-analysis" class="px-4 py-2 rounded-lg hover:text-slate-900 transition duration-150">Analyzer</button>
-                    <button onclick="navigateTo('nws')" id="tab-nws" class="px-4 py-2 rounded-lg hover:text-slate-900 transition duration-150">Formatter</button>
+                    <button onclick="navigateTo('importer')" id="tab-importer" class="px-4 py-2 rounded-lg hover:text-slate-900 transition duration-150">Importer</button>
                     <button onclick="navigateTo('faq')" id="tab-faq" class="px-4 py-2 rounded-lg hover:text-slate-900 transition duration-150">FAQ</button>
                     <button onclick="navigateTo('contact')" id="tab-contact" class="px-4 py-2 rounded-lg hover:text-slate-900 transition duration-150">Contact</button>
                 </nav>
@@ -90,8 +90,8 @@
 
             <!-- ================= LOBBY (HOME) SECTION ================= -->
             <section id="sect-home" class="flex flex-col gap-6 py-4">
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-green-50 via-white to-amber-50/30 border border-green-200 shadow-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 h-40 w-40 bg-green-600/5 blur-3xl rounded-full"></div>
+                <!-- Left Main Feature Details (Main Story) -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden">
                     <span class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Welcome to the Site</span>
                     <h2 class="tech-header text-2xl sm:text-3xl font-bold leading-tight mt-1 mb-3 text-slate-900">
                         Learn About Your Territory
@@ -107,8 +107,8 @@
                 </div>
 
                 <!-- Highlight Quote Block / Mission Parameter -->
-                <div class="border-l-4 border-green-700 bg-green-50/50 p-5 rounded-r-xl">
-                    <p class="text-sm sm:text-base text-slate-800 italic leading-relaxed font-serif">
+                <div class="border-l-4 border-green-700 bg-white shadow-sm p-5 rounded-r-xl">
+                    <p class="text-sm sm:text-base text-slate-800 leading-relaxed font-serif">
                         “I did not hold back from telling you any of the things that were profitable nor from teaching … from house to house” - Acts 20:20
                     </p>
                 </div>
@@ -122,7 +122,7 @@
                             <h3 class="tech-header font-bold text-slate-900 mt-2 mb-2">Ready to go?</h3>
                             <p class="text-xs text-slate-600 leading-relaxed mb-4">Skip the guesswork. Upload your boundary map and instantly matching it against verified 911 dispatch GIS data to generate an exact address count.</p>
                         </div>
-                        <button onclick="navigateTo('analysis')" class="tactile-btn mt-auto w-full py-3 bg-green-700 hover:bg-green-600 active:bg-green-800 text-white text-[10px] font-bold uppercase tracking-wider rounded-lg shadow-sm transition duration-150">
+                        <button onclick="navigateTo('analysis')" class="tactile-btn mt-auto w-full py-3 border border-green-600/30 hover:bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-wider rounded-lg transition duration-150">
                             Start analyzing your territory now
                         </button>
                     </div>
@@ -158,306 +158,73 @@
             <section id="sect-analysis" class="hidden py-4">
                 <div class="max-w-4xl mx-auto flex flex-col gap-6">
                     <div class="border-b border-slate-200 pb-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-green-700">Auditing Sequence</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-green-700">Analysis Instructions</span>
                         <h2 class="tech-header text-3xl font-bold text-slate-900 mt-1">Territory Geometry Analyzer</h2>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            The Analyzer cross-references your drawn KML boundaries with live County 911 Dispatch GIS points to give you an exact count of every deliverable address within your borders. Follow the simple steps below to process your map.
+                        </p>
                     </div>
 
-                    <!-- Progress Selector Steps -->
-                    <div class="grid grid-cols-3 gap-2 border-y border-slate-200 py-3 text-xs uppercase font-semibold text-center tracking-wider">
-                        <div id="step-ind-1" class="text-green-700 font-bold border-r border-slate-200 flex items-center justify-center gap-1.5">
-                            <span class="h-2 w-2 rounded-full bg-green-700"></span> 01. Parameters
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
+                            <span class="data-font text-green-700 text-sm font-bold uppercase">Step 01</span>
+                            <h3 class="tech-header font-bold text-slate-900">Download your KML</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Export your territory boundaries from your mapping software as a standard .KML file.</p>
                         </div>
-                        <div id="step-ind-2" class="text-slate-400 border-r border-slate-200 flex items-center justify-center gap-1.5">
-                            <span class="h-2 w-2 rounded-full bg-slate-300"></span> 02. KML Boundary
+                        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
+                            <span class="data-font text-green-700 text-sm font-bold uppercase">Step 02</span>
+                            <h3 class="tech-header font-bold text-slate-900">Upload to the Engine</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Click the launch button below to open the Streamlit engine and upload your file into the secure drop zone.</p>
                         </div>
-                        <div id="step-ind-3" class="text-slate-400 flex items-center justify-center gap-1.5">
-                            <span class="h-2 w-2 rounded-full bg-slate-300"></span> 03. Run Audit
-                        </div>
-                    </div>
-
-                    <!-- Config Step 1 Panel -->
-                    <div id="pane-step-1" class="flex flex-col gap-6 bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                            <h3 class="tech-header font-bold text-slate-900 uppercase text-xs tracking-wider">Configure Area Parameters</h3>
-                            <span class="data-font text-xs text-green-700">Step 1 of 3</span>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- County Select -->
-                            <div class="flex flex-col gap-2">
-                                <label class="text-xs font-bold uppercase text-slate-600 tracking-wider">Wisconsin County Territory</label>
-                                <select id="analysis-county" class="p-3 border border-slate-300 rounded-xl bg-slate-50 text-slate-900 text-sm focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600 transition duration-150">
-                                    <option value="milwaukee">Milwaukee County Zone</option>
-                                    <option value="waukesha" disabled class="text-slate-400">Waukesha County Zone (Planned)</option>
-                                    <option value="ozaukee" disabled class="text-slate-400">Ozaukee County Zone (Planned)</option>
-                                    <option value="washington" disabled class="text-slate-400">Washington County Zone (Planned)</option>
-                                    <option value="racine" disabled class="text-slate-400">Racine County Zone (Planned)</option>
-                                    <option value="kenosha" disabled class="text-slate-400">Kenosha County Zone (Planned)</option>
-                                </select>
-                                <p class="text-[10px] text-slate-500">Milwaukee County's official GIS metrics are currently loaded.</p>
-                            </div>
-
-                            <!-- Congregation Name -->
-                            <div class="flex flex-col gap-2">
-                                <label class="text-xs font-bold uppercase text-slate-600 tracking-wider">Congregation Unit Name</label>
-                                <input type="text" id="analysis-congregation" placeholder="e.g. Milwaukee Northwest" class="p-3 border border-slate-300 rounded-xl bg-white text-slate-900 text-sm placeholder-slate-400 focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600 transition duration-150">
-                                <p class="text-[10px] text-slate-500 font-medium">Names will prefix generated Excel database maps.</p>
-                            </div>
-
-                            <!-- Target Sizes Dropdown -->
-                            <div class="flex flex-col gap-2">
-                                <label class="text-xs font-bold uppercase text-slate-600 tracking-wider">Target Address Threshold</label>
-                                <select id="analysis-goal" class="p-3 border border-slate-300 rounded-xl bg-slate-50 text-slate-900 text-sm focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600 transition duration-150">
-                                    <option value="80">80 Deliveries (Optimal Single Campaign)</option>
-                                    <option value="100" selected>100 Deliveries (Standard balanced threshold)</option>
-                                    <option value="120">120 Deliveries (Denser Zone Allocation)</option>
-                                    <option value="150">150 Deliveries (Multi-block boundary sweep)</option>
-                                </select>
-                                <p class="text-[10px] text-slate-500">Triggers visual alerts if counts are outside limits.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex justify-end pt-4 border-t border-slate-100 mt-2">
-                            <button onclick="advanceToStep(2)" class="tactile-btn px-6 py-3 bg-green-700 hover:bg-green-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-sm transition">
-                                Next Step: Load Boundary File →
-                            </button>
+                        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
+                            <span class="data-font text-green-700 text-sm font-bold uppercase">Step 03</span>
+                            <h3 class="tech-header font-bold text-slate-900">Export your Excel file</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Once the audit is complete, download your generated Analysis Excel spreadsheet containing your precise counts.</p>
                         </div>
                     </div>
 
-                    <!-- Config Step 2 Panel (Upload Parser Grid) -->
-                    <div id="pane-step-2" class="hidden flex flex-col gap-6 bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                            <h3 class="tech-header font-bold text-slate-900 uppercase text-xs tracking-wider">Upload Geographic KML Dataset</h3>
-                            <span class="data-font text-xs text-green-700">Step 2 of 3</span>
-                        </div>
-
-                        <!-- Drag and Drop Box -->
-                        <div class="border-2 border-dashed border-slate-300 hover:border-green-600 rounded-2xl bg-green-50/50 py-10 px-4 flex flex-col items-center justify-center text-center cursor-pointer transition-colors duration-200 relative" id="kml-drop-zone">
-                            <input type="file" id="kml-file-input" accept=".kml" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full">
-                            <!-- SVG Map Pin Globe Icon -->
-                            <svg class="w-10 h-10 text-green-600 mb-3 animate-pulse" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25gC4.5 6.252 8.248 2.5 12 2.5s7.5 3.752 7.5 8z"/>
-                            </svg>
-                            <span class="text-sm font-bold text-slate-700">Drag & Drop Territory .KML File</span>
-                            <span class="text-xs text-slate-500 mt-1">or select file from local workstation</span>
-                        </div>
-
-                        <!-- Dynamic XML Parsing Grid -->
-                        <div id="kml-parse-results" class="hidden flex flex-col gap-4 p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
-                            <div class="flex items-center gap-2 text-green-700">
-                                <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-dasharray="32" stroke-linecap="round"/></svg>
-                                <span class="text-sm font-bold tracking-wider uppercase">Extracted Spatial Geometry Grid</span>
-                            </div>
-                            <div class="text-xs text-slate-600">
-                                <p id="kml-file-meta" class="data-font text-slate-800"></p>
-                                <p class="font-semibold uppercase tracking-wider text-slate-500 mt-3 mb-2">Recognized Map Nodes:</p>
-                                <div id="kml-regions-list" class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-36 overflow-y-auto pr-1"></div>
-                            </div>
-                        </div>
-
-                        <!-- Sample Load Trigger -->
-                        <div class="flex justify-between items-center bg-slate-50 border border-slate-200 p-4 rounded-xl text-xs">
-                            <span class="text-slate-600">No test dataset available? Load coordinates simulation:</span>
-                            <button onclick="loadSampleKml()" class="tactile-btn px-4 py-2 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold rounded-lg uppercase tracking-wide shadow-sm">
-                                Simulation Test
-                            </button>
-                        </div>
-
-                        <div class="flex justify-between pt-4 border-t border-slate-100">
-                            <button onclick="advanceToStep(1)" class="px-5 py-2.5 border border-slate-300 hover:bg-slate-50 rounded-lg text-slate-600 text-xs font-bold uppercase tracking-wider">
-                                ← Back
-                            </button>
-                            <button id="btn-to-step-3" onclick="advanceToStep(3)" class="px-6 py-2.5 bg-green-700 hover:bg-green-600 text-white text-xs font-bold uppercase tracking-wider rounded-lg opacity-50 cursor-not-allowed shadow-sm" disabled>
-                                Verify Output Audit →
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Config Step 3 Panel (Live Audit & Cloud Link) -->
-                    <div id="pane-step-3" class="hidden flex flex-col gap-6 bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                            <h3 class="tech-header font-bold text-slate-900 uppercase text-xs tracking-wider">Spatial Pipeline Integration</h3>
-                            <span class="data-font text-xs text-green-700">Step 3 of 3</span>
-                        </div>
-
-                        <!-- Processing simulation console -->
-                        <div id="audit-loading-pane" class="flex flex-col gap-3 py-10 items-center justify-center text-center">
-                            <div class="relative flex items-center justify-center h-12 w-12 mb-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-30"></span>
-                                <span class="relative inline-flex rounded-full h-8 w-8 bg-green-600"></span>
-                            </div>
-                            <span id="audit-status-text" class="data-font text-xs text-green-700 tracking-wider">INITIALIZING BOUNDARY CLIPPING MATRIX...</span>
-                        </div>
-
-                        <!-- Finished state console layout -->
-                        <div id="audit-finished-pane" class="hidden flex flex-col gap-6">
-                            <div class="p-5 bg-slate-50 border border-slate-200 rounded-xl flex flex-col gap-2">
-                                <span class="text-[10px] uppercase font-bold tracking-widest text-green-700">Audit Complete</span>
-                                <h4 class="tech-header text-xl font-bold text-slate-900">Analysis Map Ready to Package</h4>
-                                <p class="text-xs text-slate-600 leading-relaxed">
-                                    Your polygon sets, target parameters, and county files are processed and packaged for the master python compiler interface. Connect with the active Streamlit node below to output Excel sheets.
-                                </p>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                                <div class="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
-                                    <h5 class="tech-header font-bold uppercase text-slate-600 mb-3 tracking-wide">Allocated Specs:</h5>
-                                    <ul class="flex flex-col gap-2 text-slate-700 data-font">
-                                        <li class="flex justify-between border-b border-slate-100 pb-1.5">
-                                            <span>County:</span> 
-                                            <strong id="summary-county" class="text-green-700 capitalize"></strong>
-                                        </li>
-                                        <li class="flex justify-between border-b border-slate-100 pb-1.5">
-                                            <span>Congregation:</span> 
-                                            <strong id="summary-congregation" class="text-green-700"></strong>
-                                        </li>
-                                        <li class="flex justify-between border-b border-slate-100 pb-1.5">
-                                            <span>Threshold:</span> 
-                                            <strong id="summary-goal" class="text-green-700"></strong>
-                                        </li>
-                                        <li class="flex justify-between">
-                                            <span>Zones Parsed:</span> 
-                                            <strong id="summary-count" class="text-green-700"></strong>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="p-4 border border-green-200 bg-green-50/50 rounded-xl flex flex-col justify-between">
-                                    <div>
-                                        <h5 class="tech-header font-bold uppercase tracking-wide text-green-800 mb-1">Dynamic Engine Connection</h5>
-                                        <p class="text-[11px] text-slate-600 leading-relaxed">
-                                            Streamlit cloud servers can process geospatial queries on demand. Connect to query the localized Wisconsin .shp dataset.
-                                        </p>
-                                    </div>
-                                    <a id="streamlit-redirect-link" href="#" target="_blank" class="tactile-btn mt-3 py-3 bg-green-700 hover:bg-green-600 text-white font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-sm transition">
-                                        Deploy Active Engine →
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between pt-4 border-t border-slate-100">
-                                <button onclick="advanceToStep(2)" class="px-5 py-2.5 border border-slate-300 hover:bg-slate-50 rounded-lg text-slate-600 text-xs font-bold uppercase tracking-wider">
-                                    ← Modify Geometry
-                                </button>
-                                <button onclick="resetAnalysisForm()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider rounded-lg border border-slate-200">
-                                    Reset Workspace
-                                </button>
-                            </div>
-                        </div>
+                    <div class="mt-8 flex justify-center">
+                        <button onclick="window.open('https://your-streamlit-app-url.com', '_blank')" class="tactile-btn px-10 py-4 bg-green-700 hover:bg-green-600 text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition duration-150 text-sm flex items-center gap-2">
+                            Launch Analyzer Engine →
+                        </button>
                     </div>
                 </div>
             </section>
 
 
-            <!-- ================= INTERACTIVE WORKSPACE: NWS APPS ================= -->
-            <section id="sect-nws" class="hidden py-4">
+            <!-- ================= INTERACTIVE WORKSPACE: IMPORTER ================= -->
+            <section id="sect-importer" class="hidden py-4">
                 <div class="max-w-4xl mx-auto flex flex-col gap-6">
                     <div class="border-b border-slate-200 pb-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-green-700">Module Schema Reformatter</span>
-                        <h2 class="tech-header text-3xl font-bold text-slate-900 mt-1">Northwest System Address Formatter</h2>
-                        <p class="text-xs text-slate-600 mt-1">
-                            Paste raw addresses directly or drop Excel tables to clean coordinates formatting, handle multi-family splits, and format for seamless NWS imports.
+                        <span class="text-xs font-bold uppercase tracking-widest text-green-700">Formatting Instructions</span>
+                        <h2 class="tech-header text-3xl font-bold text-slate-900 mt-1">Northwest System Address Importer</h2>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Once your territory addresses are accurate, they need to be formatted correctly to import smoothly into your territory management system. This tool strips extra spaces, parses multi-family units, and prepares your file for NWS.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                        <!-- Command Panel -->
-                        <div class="md:col-span-5 flex flex-col gap-4 bg-white shadow-sm p-5 border border-slate-200 rounded-2xl">
-                            <h3 class="tech-header font-bold text-xs uppercase tracking-wider text-slate-700 border-b border-slate-100 pb-2">Control Terminal</h3>
-                            
-                            <div class="flex flex-col gap-1.5">
-                                <label class="text-xs font-bold uppercase text-slate-600 tracking-wide">Target Log Dataset</label>
-                                <input type="file" id="nws-file-input" accept=".csv, .xlsx" class="p-2 border border-slate-300 rounded-xl bg-slate-50 text-xs text-slate-800">
-                                <p class="text-[10px] text-slate-500">Imports Excel sheets output by spatial joins sweeps.</p>
-                            </div>
-
-                            <div class="flex flex-col gap-1.5">
-                                <label class="text-xs font-bold uppercase text-slate-600 tracking-wide">Active Filters</label>
-                                <div class="flex flex-col gap-2 text-xs text-slate-700 mt-1">
-                                    <label class="flex items-center gap-2 cursor-pointer">
-                                        <input type="checkbox" checked class="rounded bg-white border-slate-300 text-green-700 focus:ring-green-600">
-                                        Trim double spaces & whitespace anomalies
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer">
-                                        <input type="checkbox" checked class="rounded bg-white border-slate-300 text-green-700 focus:ring-green-600">
-                                        Parse physical unit formats (#, Apt, Fl)
-                                    </label>
-                                    <label class="flex items-center gap-2 cursor-pointer">
-                                        <input type="checkbox" checked class="rounded bg-white border-slate-300 text-green-700 focus:ring-green-600">
-                                        Re-order block range hierarchies
-                                    </label>
-                                </div>
-                            </div>
-
-                            <button onclick="runNwsFormatter()" class="tactile-btn mt-3 py-3 bg-green-700 hover:bg-green-600 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition shadow-sm">
-                                Compile Datasets →
-                            </button>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+                        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
+                            <span class="data-font text-green-700 text-sm font-bold uppercase">Step 01</span>
+                            <h3 class="tech-header font-bold text-slate-900">Export from NWS</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Download your current "Territory" Export file directly from your NWS administrative dashboard.</p>
                         </div>
-
-                        <!-- High Fidelity Console Terminal Output -->
-                        <div class="md:col-span-7 flex flex-col gap-4">
-                            <h3 class="tech-header font-bold text-xs uppercase tracking-wider text-slate-600">Terminal Log Output</h3>
-
-                            <!-- Standby screen -->
-                            <div id="nws-preview-empty" class="border border-slate-200 rounded-2xl bg-slate-50 p-12 text-center text-xs text-slate-500 data-font shadow-inner">
-                                // STANDBY_
-                                <br><span class="text-[10px] text-slate-400">Compile active datasets or select mock models for simulation previews.</span>
-                            </div>
-
-                            <!-- Finished state terminal grid -->
-                            <div id="nws-preview-pane" class="hidden flex flex-col gap-3 bg-white shadow-sm p-5 border border-slate-200 rounded-2xl data-font">
-                                <div class="flex items-center justify-between text-xs font-semibold text-slate-600 border-b border-slate-100 pb-2">
-                                    <span>Records Corrected: <strong class="text-green-700">12 Rows</strong></span>
-                                    <span class="text-green-700 flex items-center gap-1">
-                                        <span class="h-1.5 w-1.5 bg-green-600 rounded-full animate-ping"></span> 100% Corrected
-                                    </span>
-                                </div>
-                                <div class="overflow-x-auto rounded-xl border border-slate-200 text-xs">
-                                    <table class="w-full text-left border-collapse">
-                                        <thead>
-                                            <tr class="bg-slate-50 border-b border-slate-200 text-[10px] uppercase tracking-wider font-semibold text-slate-600">
-                                                <th class="p-3">Territory</th>
-                                                <th class="p-3">Mailable Entrance</th>
-                                                <th class="p-3">Municipality</th>
-                                                <th class="p-3">Format Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-slate-100 text-slate-700">
-                                            <tr>
-                                                <td class="p-3 text-[11px] font-bold text-slate-900">T-01</td>
-                                                <td class="p-3 text-[11px]">2800 W Wright St #101</td>
-                                                <td class="p-3 text-[11px]">Milwaukee</td>
-                                                <td class="p-3 text-[11px] text-green-700">[CONSOLIDATED]</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-3 text-[11px] font-bold text-slate-900">T-01</td>
-                                                <td class="p-3 text-[11px]">2802 W Wright St</td>
-                                                <td class="p-3 text-[11px]">Milwaukee</td>
-                                                <td class="p-3 text-[11px] text-green-700">[STANDARDIZED]</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-3 text-[11px] font-bold text-slate-900">T-02</td>
-                                                <td class="p-3 text-[11px]">3411 N Hi-Mount Blvd</td>
-                                                <td class="p-3 text-[11px]">Milwaukee</td>
-                                                <td class="p-3 text-[11px] text-green-700">[STRIPPED SPACE]</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="p-3 text-[11px] font-bold text-slate-900">T-03</td>
-                                                <td class="p-3 text-[11px]">1019 S 76th St #12A</td>
-                                                <td class="p-3 text-[11px]">West Allis</td>
-                                                <td class="p-3 text-[11px] text-green-700">[UNIT PARSED]</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="flex justify-between items-center mt-2 pt-3 border-t border-slate-100">
-                                    <span class="text-[10px] text-slate-500">Output formatted matches as standardized .CSV file.</span>
-                                    <button onclick="downloadNwsMockCsv()" class="tactile-btn px-4 py-2 bg-green-700 hover:bg-green-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-sm">
-                                        Download Dataset
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
+                            <span class="data-font text-green-700 text-sm font-bold uppercase">Step 02</span>
+                            <h3 class="tech-header font-bold text-slate-900">Upload your Data</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Launch the engine and upload both your Territory Analysis CSV and your NWS Territory Export file.</p>
                         </div>
+                        <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-2">
+                            <span class="data-font text-green-700 text-sm font-bold uppercase">Step 03</span>
+                            <h3 class="tech-header font-bold text-slate-900">Download Formatted List</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Download the resulting NWS "Address" Import file, fully sanitized and ready to be uploaded back into NWS.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex justify-center">
+                        <button onclick="window.open('https://your-streamlit-app-url.com', '_blank')" class="tactile-btn px-10 py-4 bg-green-700 hover:bg-green-600 text-white font-bold uppercase tracking-wider rounded-xl shadow-md transition duration-150 text-sm flex items-center gap-2">
+                            Launch Importer Engine →
+                        </button>
                     </div>
                 </div>
             </section>
@@ -471,50 +238,125 @@
                         <h2 class="tech-header text-3xl font-bold text-slate-900 mt-1">Frequently Asked Questions</h2>
                     </div>
 
-                    <!-- Modern Neon Accented Accordions -->
+                    <!-- Category: SOURCES -->
+                    <h3 class="tech-header text-xl font-bold text-green-700 mt-4 mb-2 border-b border-slate-200/50 pb-2">SOURCES</h3>
                     <div class="flex flex-col gap-4">
-                        
                         <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
                             <button onclick="toggleFaq(1)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
-                                <span class="tech-header font-bold text-slate-900">What is a KML file?</span>
+                                <span class="tech-header font-bold text-slate-900">Where does Territory Analysis get it’s data?</span>
                                 <span id="faq-arrow-1" class="text-green-700 transition-transform duration-200">▼</span>
                             </button>
                             <div id="faq-answer-1" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
-                                Keyhole Markup Language (KML) is an XML-based file format used to display geographic boundaries, polygons, and point data in mapping engines like Google Earth and localized GIS packages.
+                                [Information updating soon. This tool uses official 911 dispatch and county GIS parcel datasets to ensure ground-truth accuracy over crowdsourced maps.]
                             </div>
                         </div>
-
                         <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
                             <button onclick="toggleFaq(2)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
-                                <span class="tech-header font-bold text-slate-900">How do I download a KML from my territory software?</span>
+                                <span class="tech-header font-bold text-slate-900">Why are my territory addresses are not accurate?</span>
                                 <span id="faq-arrow-2" class="text-green-700 transition-transform duration-200">▼</span>
                             </button>
                             <div id="faq-answer-2" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
-                                Under your congregation settings or maps setup menu, find your digital boundary maps. Locate the "Export" configurations and choose the **KML** polygon format rather than JPEG imagery or PDF files.
+                                [Information updating soon. Often, relying on Google Maps or standard API routing results in skipped side-by-side duplexes or misaligned boundaries.]
                             </div>
                         </div>
-
                         <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
                             <button onclick="toggleFaq(3)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
-                                <span class="tech-header font-bold text-slate-900">What if I don't have a structured KML ready?</span>
+                                <span class="tech-header font-bold text-slate-900">Does this website store my uploaded data?</span>
                                 <span id="faq-arrow-3" class="text-green-700 transition-transform duration-200">▼</span>
                             </button>
                             <div id="faq-answer-3" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
-                                You can construct boundary layouts free inside **Google My Maps** (google.com/mymaps). Simply draw polygon vectors around target neighborhoods, name them to align with your territory list, click the layer settings dots, and download the KML export.
+                                [Information updating soon. Our engines process spatial layers entirely in memory during your session, ensuring privacy and security.]
                             </div>
                         </div>
+                    </div>
 
+                    <!-- Category: KML -->
+                    <h3 class="tech-header text-xl font-bold text-green-700 mt-6 mb-2 border-b border-slate-200/50 pb-2">KML</h3>
+                    <div class="flex flex-col gap-4">
                         <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
                             <button onclick="toggleFaq(4)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
-                                <span class="tech-header font-bold text-slate-900">Where do the deliverable addresses come from?</span>
+                                <span class="tech-header font-bold text-slate-900">What is a KML file?</span>
                                 <span id="faq-arrow-4" class="text-green-700 transition-transform duration-200">▼</span>
                             </button>
                             <div id="faq-answer-4" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
-                                This tool avoids crowdsourced discrepancies by matching coordinates with ground-truth County GIS tax registries and public land parcel metrics, giving you absolute coverage.
+                                Keyhole Markup Language (KML) is an XML-based file format used to display geographic boundaries, polygons, and point data in mapping engines like Google Earth and localized GIS packages.
                             </div>
                         </div>
-
+                        <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+                            <button onclick="toggleFaq(5)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                                <span class="tech-header font-bold text-slate-900">How do I download a KML from my territory software?</span>
+                                <span id="faq-arrow-5" class="text-green-700 transition-transform duration-200">▼</span>
+                            </button>
+                            <div id="faq-answer-5" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
+                                Under your congregation settings or maps setup menu, find your digital boundary maps. Locate the "Export" configurations and choose the **KML** polygon format rather than JPEG imagery or PDF files.
+                            </div>
+                        </div>
+                        <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+                            <button onclick="toggleFaq(6)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                                <span class="tech-header font-bold text-slate-900">What if I don't have a KML ready?</span>
+                                <span id="faq-arrow-6" class="text-green-700 transition-transform duration-200">▼</span>
+                            </button>
+                            <div id="faq-answer-6" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
+                                You can construct boundary layouts free inside **Google My Maps** (google.com/mymaps). Simply draw polygon vectors around target neighborhoods, name them to align with your territory list, click the layer settings dots, and download the KML export.
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Category: ANALYSIS -->
+                    <h3 class="tech-header text-xl font-bold text-green-700 mt-6 mb-2 border-b border-slate-200/50 pb-2">ANALYSIS</h3>
+                    <div class="flex flex-col gap-4">
+                        <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+                            <button onclick="toggleFaq(7)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                                <span class="tech-header font-bold text-slate-900">What do the different tabs mean?</span>
+                                <span id="faq-arrow-7" class="text-green-700 transition-transform duration-200">▼</span>
+                            </button>
+                            <div id="faq-answer-7" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
+                                [Information updating soon. The generated Excel files feature multiple tabs to separate out Base Counts, Multi-Family Homes, and Audited Boundary changes.]
+                            </div>
+                        </div>
+                        <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+                            <button onclick="toggleFaq(8)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                                <span class="tech-header font-bold text-slate-900">What if I can’t open my Analysis file?</span>
+                                <span id="faq-arrow-8" class="text-green-700 transition-transform duration-200">▼</span>
+                            </button>
+                            <div id="faq-answer-8" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
+                                [Information updating soon. Ensure you are using Microsoft Excel or importing the CSV format into Google Sheets.]
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: IMPORTER -->
+                    <h3 class="tech-header text-xl font-bold text-green-700 mt-6 mb-2 border-b border-slate-200/50 pb-2">IMPORTER</h3>
+                    <div class="flex flex-col gap-4">
+                        <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+                            <button onclick="toggleFaq(9)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                                <span class="tech-header font-bold text-slate-900">How do I get my NWS “Territory” Export file?</span>
+                                <span id="faq-arrow-9" class="text-green-700 transition-transform duration-200">▼</span>
+                            </button>
+                            <div id="faq-answer-9" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
+                                [Information updating soon. Navigate to your Northwest System portal's settings menu and click on the export current boundaries tool.]
+                            </div>
+                        </div>
+                        <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+                            <button onclick="toggleFaq(10)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                                <span class="tech-header font-bold text-slate-900">What if I can’t open my importer file?</span>
+                                <span id="faq-arrow-10" class="text-green-700 transition-transform duration-200">▼</span>
+                            </button>
+                            <div id="faq-answer-10" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
+                                [Information updating soon. Please ensure your downloaded file has not been altered or saved under a different extension type.]
+                            </div>
+                        </div>
+                        <div class="border border-slate-200 rounded-2xl bg-white shadow-sm overflow-hidden">
+                            <button onclick="toggleFaq(11)" class="w-full p-5 text-left flex justify-between items-center hover:bg-slate-50 transition">
+                                <span class="tech-header font-bold text-slate-900">What does this file mean?</span>
+                                <span id="faq-arrow-11" class="text-green-700 transition-transform duration-200">▼</span>
+                            </button>
+                            <div id="faq-answer-11" class="hidden p-5 border-t border-slate-100 bg-slate-50 text-sm text-slate-600 leading-relaxed">
+                                [Information updating soon. This file is specifically formatted to be instantly readable by standard territory management imports without manual retyping.]
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -523,10 +365,9 @@
             <section id="sect-contact" class="hidden py-4">
                 <div class="max-w-2xl mx-auto flex flex-col gap-6">
                     <div class="border-b border-slate-200 pb-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-green-700">Dispatch Communications</span>
                         <h2 class="tech-header text-3xl font-bold text-slate-900 mt-1">Inquiries & Custom Requests</h2>
-                        <p class="text-xs text-slate-600 mt-1">
-                            Have spatial layout suggestions, or need custom spatial parcel scripts coded for specific Wisconsin counties? Connect with our developer node below.
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Whether a question slipped past the FAQ, a tool isn't behaving quite right on your browser, or you have a fresh idea to make mapping easier for our congregations—I'd love to hear it. Drop your thoughts in the form below.
                         </p>
                     </div>
 
@@ -554,7 +395,7 @@
 
                         <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-slate-100 pt-4 mt-2">
                             <div class="text-[10px] text-slate-500 max-w-xs leading-relaxed data-font">
-                                Forms dispatch dynamically generates draft requests to send directly to <strong class="text-green-700">isaacrobles33321@gmail.com</strong>.
+                                Forms dynamically generate draft requests to send directly to <strong class="text-green-700">isaacrobles33321@gmail.com</strong>.
                             </div>
                             <button type="submit" class="tactile-btn px-6 py-3 bg-green-700 hover:bg-green-600 text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-sm transition">
                                 Dispatch Inquiry →
@@ -596,13 +437,9 @@
 
     <!-- MAIN CONTROL LOGIC -->
     <script>
-        let globalKmlRegions = [];
-        let parsedKmlFileText = '';
-        let uploadedKmlFileName = '';
-
         // Single page router navigation logic
         function navigateTo(tabId) {
-            const sections = ['home', 'analysis', 'nws', 'faq', 'contact', 'sample', 'usecases'];
+            const sections = ['home', 'analysis', 'importer', 'faq', 'contact', 'sample', 'usecases'];
             
             sections.forEach(sec => {
                 const sectEl = document.getElementById(`sect-${sec}`);
@@ -627,209 +464,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Stepped Progression Controller in Analyzer View
-        function advanceToStep(stepNumber) {
-            const ind1 = document.getElementById('step-ind-1');
-            const ind2 = document.getElementById('step-ind-2');
-            const ind3 = document.getElementById('step-ind-3');
-
-            const pane1 = document.getElementById('pane-step-1');
-            const pane2 = document.getElementById('pane-step-2');
-            const pane3 = document.getElementById('pane-step-3');
-
-            [ind1, ind2, ind3].forEach(el => {
-                el.classList.remove('text-green-700', 'font-bold');
-                el.classList.add('text-slate-400');
-                el.querySelector('span').className = "h-2 w-2 rounded-full bg-slate-300";
-            });
-
-            [pane1, pane2, pane3].forEach(pane => pane.classList.add('hidden'));
-
-            if (stepNumber === 1) {
-                ind1.classList.add('text-green-700', 'font-bold');
-                ind1.querySelector('span').className = "h-2 w-2 rounded-full bg-green-700 animate-pulse";
-                pane1.classList.remove('hidden');
-            } else if (stepNumber === 2) {
-                ind2.classList.add('text-green-700', 'font-bold');
-                ind2.querySelector('span').className = "h-2 w-2 rounded-full bg-green-700 animate-pulse";
-                pane2.classList.remove('hidden');
-            } else if (stepNumber === 3) {
-                ind3.classList.add('text-green-700', 'font-bold');
-                ind3.querySelector('span').className = "h-2 w-2 rounded-full bg-green-700 animate-pulse";
-                pane3.classList.remove('hidden');
-                triggerStep3AuditSimulation();
-            }
-        }
-
-        // XML DOMParser logic
-        document.getElementById('kml-file-input').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                processKmlFile(file);
-            }
-        });
-
-        const dropZone = document.getElementById('kml-drop-zone');
-        dropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropZone.classList.add('border-green-600', 'bg-green-50');
-        });
-        dropZone.addEventListener('dragleave', () => {
-            dropZone.classList.remove('border-green-600', 'bg-green-50');
-        });
-        dropZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropZone.classList.remove('border-green-600', 'bg-green-50');
-            const file = e.dataTransfer.files[0];
-            if (file && file.name.endsWith('.kml')) {
-                processKmlFile(file);
-            }
-        });
-
-        function processKmlFile(file) {
-            uploadedKmlFileName = file.name;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                parsedKmlFileText = e.target.result;
-                extractRegionsFromKmlText(parsedKmlFileText, file.name, file.size);
-            };
-            reader.readAsText(file);
-        }
-
-        function extractRegionsFromKmlText(text, name, size) {
-            try {
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(text, "text/xml");
-                const placemarks = xmlDoc.getElementsByTagName("Placemark");
-                
-                globalKmlRegions = [];
-                for (let i = 0; i < placemarks.length; i++) {
-                    const nameNode = placemarks[i].getElementsByTagName("name")[0];
-                    if (nameNode && nameNode.textContent.trim()) {
-                        globalKmlRegions.push(nameNode.textContent.trim());
-                    }
-                }
-
-                if (globalKmlRegions.length === 0) {
-                    globalKmlRegions = ["Map Sector A", "Map Sector B", "Subdivision Zone C"];
-                }
-
-                // Show extracted region grid with beautiful color coding
-                document.getElementById('kml-parse-results').classList.remove('hidden');
-                document.getElementById('kml-file-meta').innerHTML = `File: <strong>${name}</strong> (${(size / 1024).toFixed(1)} KB)`;
-                
-                const listEl = document.getElementById('kml-regions-list');
-                listEl.innerHTML = '';
-                
-                globalKmlRegions.forEach((reg, idx) => {
-                    const block = document.createElement('div');
-                    block.className = "p-2 bg-slate-50 border border-slate-200 rounded-lg text-[11px] font-semibold text-slate-700 truncate flex items-center gap-1.5 shadow-sm";
-                    
-                    const marker = document.createElement('span');
-                    marker.className = "h-1.5 w-1.5 rounded-full bg-green-600";
-                    
-                    block.appendChild(marker);
-                    block.appendChild(document.createTextNode(reg));
-                    listEl.appendChild(block);
-                });
-
-                const btn3 = document.getElementById('btn-to-step-3');
-                btn3.classList.remove('opacity-50', 'cursor-not-allowed');
-                btn3.disabled = false;
-
-            } catch (err) {
-                console.error("KML Parser Failure: ", err);
-            }
-        }
-
-        function loadSampleKml() {
-            const mockKml = `<?xml version="1.0" encoding="UTF-8"?>
-                <kml xmlns="http://www.opengis.net/kml/2.2">
-                    <Document>
-                        <Placemark><name>Milwaukee Sector NW-01</name></Placemark>
-                        <Placemark><name>Milwaukee Sector NW-02</name></Placemark>
-                        <Placemark><name>Milwaukee Sector SE-05</name></Placemark>
-                        <Placemark><name>Milwaukee Sector SE-06</name></Placemark>
-                        <Placemark><name>Milwaukee Center Core-09</name></Placemark>
-                        <Placemark><name>Milwaukee Northshore-10</name></Placemark>
-                    </Document>
-                </kml>`;
-            extractRegionsFromKmlText(mockKml, "milwaukee_territories_sample.kml", 14350);
-        }
-
-        // Simulations loader and stats pre-population
-        function triggerStep3AuditSimulation() {
-            const loader = document.getElementById('audit-loading-pane');
-            const finished = document.getElementById('audit-finished-pane');
-            const statusText = document.getElementById('audit-status-text');
-
-            loader.classList.remove('hidden');
-            finished.classList.add('hidden');
-
-            const pipelineLogs = [
-                "ALLOCATING MILWAUKEE COUNTY COORD SETS...",
-                "CLIPPING GEOMETRIES TO SHAPE PARCELS...",
-                "RUNNING MULTI-FAMILY PROXIMITY SWEEPS...",
-                "VALIDATING COORDINATES DENSITIES..."
-            ];
-
-            let stateIndex = 0;
-            const interval = setInterval(() => {
-                if (stateIndex < pipelineLogs.length) {
-                    statusText.textContent = pipelineLogs[stateIndex];
-                    stateIndex++;
-                } else {
-                    clearInterval(interval);
-                    loader.classList.add('hidden');
-                    finished.classList.remove('hidden');
-
-                    document.getElementById('summary-county').textContent = document.getElementById('analysis-county').value;
-                    document.getElementById('summary-congregation').textContent = document.getElementById('analysis-congregation').value || "Default Congregation";
-                    document.getElementById('summary-goal').textContent = document.getElementById('analysis-goal').value + " Deliveries";
-                    document.getElementById('summary-count').textContent = globalKmlRegions.length + " Polygons";
-
-                    const targetCounty = document.getElementById('analysis-county').value;
-                    const targetCong = encodeURIComponent(document.getElementById('analysis-congregation').value || "Wisconsin Congregation");
-                    const targetGoal = document.getElementById('analysis-goal').value;
-                    
-                    const streamlitUrl = `https://your-app-name.streamlit.app/?county=${targetCounty}&congregation=${targetCong}&goal=${targetGoal}`;
-                    document.getElementById('streamlit-redirect-link').href = streamlitUrl;
-                }
-            }, 600);
-        }
-
-        function resetAnalysisForm() {
-            document.getElementById('analysis-congregation').value = '';
-            document.getElementById('kml-parse-results').classList.add('hidden');
-            
-            const btn3 = document.getElementById('btn-to-step-3');
-            btn3.classList.add('opacity-50', 'cursor-not-allowed');
-            btn3.disabled = true;
-
-            globalKmlRegions = [];
-            parsedKmlFileText = '';
-            uploadedKmlFileName = '';
-
-            advanceToStep(1);
-        }
-
-        // Formatter simulator
-        function runNwsFormatter() {
-            document.getElementById('nws-preview-empty').classList.add('hidden');
-            document.getElementById('nws-preview-pane').classList.remove('hidden');
-        }
-
-        function downloadNwsMockCsv() {
-            const csvContent = "data:text/csv;charset=utf-8,Territory ID,Street Address,City,State,Zip\nT-01,2800 W Wright St #101,Milwaukee,WI,53210\nT-01,2802 W Wright St,Milwaukee,WI,53210\nT-02,3411 N Hi-Mount Blvd,Milwaukee,WI,53210\nT-03,1019 S 76th St #12A,West Allis,WI,53214";
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", "nws_formatted_matches.csv");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
+        // FAQ accordion toggle logic
         function toggleFaq(id) {
             const answer = document.getElementById(`faq-answer-${id}`);
             const arrow = document.getElementById(`faq-arrow-${id}`);
@@ -843,6 +478,7 @@
             }
         }
 
+        // Contact email submission logic
         function handleContactSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('contact-name').value;
